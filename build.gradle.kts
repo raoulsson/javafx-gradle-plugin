@@ -61,15 +61,15 @@ gradlePlugin {
 //    tags = listOf( "java", "javafx" )
 //}
 
-group = "org.openjfx"
-version = "0.0.14-raoulsson-tmp"
+group = "com.raoulsson"
+version = "0.0.14-raoulsson"
 
 publishing {
     publications {
         create<MavenPublication>("maven"){
-            groupId = "org.openjfx"
-            artifactId = "javafx-gradle-plugin"
-            version = "0.0.14-raoulsson-tmp"
+            groupId = "com.raoulsson"
+            artifactId = "javafxplugin"
+            version = "0.0.14-raoulsson"
 
             from(components["java"])
         }
