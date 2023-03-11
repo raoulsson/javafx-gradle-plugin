@@ -32,11 +32,11 @@ And use it in your build.gradle.kts:
 
 ### ...OR, clone and build and run locally:
 
-You can glone this repo and run 
+You can clone this repo and run 
 
     ./gradlew publishToMavenLocal
 
-Then, in your actual project, make sure to defined the local .m2 repo in settings.gradle.kts:
+Then, in your actual project, make sure to use mavenLocal (your local cache, usually in /usr/home/.m2). Add in settings.gradle.kts:
 
     pluginManagement {
     repositories {
@@ -46,15 +46,15 @@ Then, in your actual project, make sure to defined the local .m2 repo in setting
     }
 }
 
-Then, in your actual project, use it by changing the plugin setup from
+Then, in your actual project, use it by changing the plugin setup from:
 
     id("org.openjfx.javafxplugin") version "0.0.13"
 
-to 
+to: 
 
     id("com.github.javafx-gradle-plugin") version "0.0.15-raoulsson"
 
-Go back later to original project and use their releases > 0.0.13, if it works.
+Go back later to original project and use their releases > 0.0.13, if it works. Good Luck!
 
 --- 
 
