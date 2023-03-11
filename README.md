@@ -1,3 +1,32 @@
+# Temporary Fix for Kotlin 1.8 Compatibility
+
+Fixes issues I run into on my M1 Mac. 
+
+You can glone this repo and run 
+
+    ./gradlew publishToMavenLocal
+
+Then, in your actual project, make sure to defined the local .m2 repo in settings.gradle.kts:
+
+    pluginManagement {
+    repositories {
+        mavenLocal() // <--- add this
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+Then, in your actual project, use it by changing the plugin setup from
+
+    id("org.openjfx.javafxplugin") version "0.0.13"
+
+to 
+
+    id("org.openjfx.javafxplugin") version "0.0.14-SNAPSHOT-raoulsson-tmp"
+
+Go back later to original project and use their releases > 0.0.13, if it works.
+
+
 # JavaFX Gradle Plugin
 
 Simplifies working with JavaFX 11+ for gradle projects.

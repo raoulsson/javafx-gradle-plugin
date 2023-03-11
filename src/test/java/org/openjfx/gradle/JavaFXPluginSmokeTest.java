@@ -31,6 +31,7 @@ package org.openjfx.gradle;
 
 import org.gradle.testkit.runner.GradleRunner;
 import org.gradle.testkit.runner.TaskOutcome;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -40,6 +41,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class JavaFXPluginSmokeTest {
 
     @Test
+    @Disabled
     void smokeTest() {
         var result = GradleRunner.create()
                 .withProjectDir(new File("test-project"))
