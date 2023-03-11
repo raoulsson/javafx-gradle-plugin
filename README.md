@@ -1,6 +1,36 @@
 # Temporary Fix for Kotlin 1.8 Compatibility
 
-Fixes issues I run into on my M1 Mac. 
+Fixes issues I run into on my M1 Mac and Kotlin 1.8+. The original project is [here](https://github.com/openjfx/javafx-gradle-plugin) and we expect them to do a similar fix soon. So make sure to check back later and switch over again.
+
+In the meantime, hope this may help.
+
+### Run EITHER directly from github [jitpack.io](https://jitpack.io/#raoulsson/javafx-gradle-plugin/v0.0.15-raoulsson) repo:
+
+
+Add to your settings.gradle.kts:
+
+    pluginManagement {
+        // https://github.com/jitpack/jitpack.io/issues/1459
+        resolutionStrategy {
+            eachPlugin {
+                if(requested.id.toString() == "com.github.javafx-gradle-plugin")
+                    useModule("com.github.raoulsson:javafx-gradle-plugin:v0.0.15-raoulsson")
+            }
+        }
+        repositories {
+            maven("https://jitpack.io")
+            mavenCentral()
+            gradlePluginPortal()
+        }
+    }
+
+And use it in your build.gradle.kts:
+
+    plugins {
+        id("com.github.javafx-gradle-plugin") version "v0.0.15-raoulsson"
+    }
+
+### ...OR, clone and build and run locally:
 
 You can glone this repo and run 
 
@@ -22,10 +52,11 @@ Then, in your actual project, use it by changing the plugin setup from
 
 to 
 
-    id("org.openjfx.javafxplugin") version "0.0.14-raoulsson-tmp"
+    id("com.github.javafx-gradle-plugin") version "0.0.15-raoulsson"
 
 Go back later to original project and use their releases > 0.0.13, if it works.
 
+--- 
 
 # JavaFX Gradle Plugin
 
