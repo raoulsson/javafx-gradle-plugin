@@ -47,8 +47,8 @@ tasks.named<Copy>("processResources") {
 gradlePlugin {
     plugins {
         create("javafxPlugin") {
-            id = "org.openjfx.javafxplugin"
-            displayName = "JavaFX Gradle Plugin"
+            id = "com.github.javafx-gradle-plugin"
+            displayName = "JavaFX Gradle Plugin - raoulsson-tweak"
             description = "Plugin that makes it easy to work with JavaFX"
             implementationClass = "org.openjfx.gradle.JavaFXPlugin"
         }
@@ -68,7 +68,7 @@ publishing {
     publications {
         create<MavenPublication>("maven"){
             groupId = "com.raoulsson"
-            artifactId = "javafxplugin"
+            artifactId = "javafx-gradle-plugin"
             version = "0.0.14-raoulsson"
 
             from(components["java"])
