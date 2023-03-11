@@ -22,7 +22,7 @@ Then, in your actual project, use it by changing the plugin setup from
 
 to 
 
-    id("org.openjfx.javafxplugin") version "0.0.14-SNAPSHOT-raoulsson-tmp"
+    id("org.openjfx.javafxplugin") version "0.0.14-raoulsson-tmp"
 
 Go back later to original project and use their releases > 0.0.13, if it works.
 
