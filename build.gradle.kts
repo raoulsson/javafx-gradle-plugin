@@ -62,14 +62,14 @@ gradlePlugin {
 //}
 
 group = "com.raoulsson"
-version = "0.0.15-raoulsson"
+version = "0.0.16-raoulsson"
 
 publishing {
     publications {
         create<MavenPublication>("maven"){
             groupId = "com.raoulsson"
             artifactId = "javafx-gradle-plugin"
-            version = "0.0.15-raoulsson"
+            version = "0.0.16-raoulsson"
 
             from(components["java"])
         }
